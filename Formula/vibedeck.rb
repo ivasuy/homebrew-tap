@@ -1,14 +1,15 @@
 class Vibedeck < Formula
   desc "Local-first usage and provenance dashboard for AI coding agents"
   homepage "https://github.com/ivasuy/vibedeck"
-  url "https://registry.npmjs.org/vibedeck-cli/-/vibedeck-cli-0.1.1.tgz"
-  sha256 "f7feedf5f103caafe29fed65f8ff2efd9fadd7523f9233fa2604d811f5403088"
+  url "https://registry.npmjs.org/vibedeck-cli/-/vibedeck-cli-0.1.2.tgz"
+  sha256 "829191922b67fac4864afa612dd15e1659df817bf446eedb36b3afa435adda74"
   license "MIT"
 
   depends_on "node"
 
   def install
     system "npm", "install", *std_npm_args
+    bin.install_symlink libexec/"bin/vibedeck"
   end
 
   test do
